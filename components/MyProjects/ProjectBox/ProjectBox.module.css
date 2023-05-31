@@ -4,6 +4,7 @@
     min-width: 295px;
     height: 231px;
     filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.7));
+    cursor: pointer;
 }
 
 .logobox {
@@ -13,7 +14,7 @@
     align-items: center;
     justify-content: center;
     background-color: #14018A;
-    border-radius: 35px 35px 0px 0px;
+    border-radius: 20px 20px 0px 0px;
 }
 
 .logoImg {
