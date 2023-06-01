@@ -4,7 +4,6 @@
 
 .gridContainer{
     display: grid;
-    column-gap: 20px;
     height: calc(100% - 67px);
 }
 

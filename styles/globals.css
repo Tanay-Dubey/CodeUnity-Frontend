@@ -113,3 +113,8 @@ a {
     color-scheme: dark;
   }
 }
+
+.ace_editor{
+  height: 100% !important;
+  width:100% !important;
+}

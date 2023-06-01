@@ -1,4 +1,6 @@
 import styles from "/components/CodeEnv/Explorer/Explorer.module.css";
+import filetree from "/components/CodeEnv/filetree.js";
+import FileTree from "/components/CodeEnv/FileTree/FileTree.js";
 import { useRef, useState, useEffect } from "react";
 
 const Explorer = ({ width, setWidth }) => {
@@ -37,7 +39,10 @@ const Explorer = ({ width, setWidth }) => {
 
   return (
     <div className={styles.Explorer}>
-      <div className={styles.explorerContent}></div>
+      <div className={styles.explorerContent}>
+        <div className={styles.projectTitle}>Main File</div>
+        <FileTree filetree={filetree} />
+      </div>
       <div
         className={styles.resizeBar1}
         ref={resizeBarRef}

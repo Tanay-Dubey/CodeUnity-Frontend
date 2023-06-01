@@ -13,4 +13,14 @@
 .explorerContent{
     height: 100%;
     width:calc(100% - 10px);
+    border-top:5px solid slategray;
+    border-left:5px solid slategray;
+    border-bottom: 5px solid slategray;
+    box-shadow: 0px 0px 5px 1px black inset;
+}
+
+.projectTitle{
+    display: flex;
+    justify-content: center;
+    margin-top:5px;
 }
