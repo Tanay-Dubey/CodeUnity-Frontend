@@ -1,14 +1,94 @@
-.header{
-    background-color: #14018A;
+.header {
     width: 100%;
-    height: 67px;
+    height: 80px;
     display: flex;
     align-items: center;
-    padding: 23px;
+    justify-content: space-between;
+    padding: 0px 23px;
+    background: #FFFFFF;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.19);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.logo{
+.logoContainer{
+    display: flex;
+    gap:40px;
+}
+
+.logo {
     position: relative;
-    width: 297px;
+    width: 256px;
     height: 55px;
+}
+
+.inputContainer{
+    display: flex;
+    height: 50px;
+}
+
+.searchBox{
+    height: 50px;
+    width: 50px;
+    border: 1px solid #000000;
+    border-right: none;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchIcon{
+    position: relative;
+    width: 25px;
+    height: 25px;
+}
+
+.search {
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    border-left: none;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    width: 450px;
+    height: 50px;
+    color: black;
+    padding: 20px 20px 20px 0px;
+
+    font-size: 15px;
+    font-family: Inter;
+    font-style: normal;
+    line-height: normal;
+}
+
+.search::placeholder {
+    color: rgba(0, 0, 0, 0.43);
+    font-size: 15px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.search:focus{
+    outline: none;
+}
+
+.account {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #FF0A0A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.accountLetter {
+    color: #FFF;
+    font-size: 28px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
 }

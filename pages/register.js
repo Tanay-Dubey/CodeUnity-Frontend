@@ -1,7 +1,7 @@
 import styles from "/styles/signup.module.css";
-import Index from "/components/Signup/Index/index.js";
+import Index from "/components/Register/Index/index.js";
 
-export default function Signup(props){
+export default function Register(props){
     return(
         <div className={styles.Signup}>
             <Index/>

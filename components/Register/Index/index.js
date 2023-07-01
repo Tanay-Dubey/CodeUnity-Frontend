@@ -1,6 +1,45 @@
-import styles from "/components/Signup/Index/index.module.css";
+import styles from "/components/Register/Index/index.module.css";
+import { useCookies } from "react-cookie";
+import Link from "next/link";
+import { useState } from "react";
+import { Registration } from "/components/constants/url";
 
 const Index = () => {
+
+    const [loading, setLoading] = useState(false);
+    const [firstname, setFirstname] = useState("");
+    const [lastname, setLastname] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+    const [cookies, setCookie, removeCookie] = useCookies([
+        "firstname",
+        "lastname",
+        "accessToken",
+        "refreshToken",
+        "accessTokenExpires",
+        "refreshTokenExpires"
+    ])
+
+    const handleSubmit = async () => {
+        try {
+            setLoading(true);
+            var data={
+                firstname,
+                lastname,
+                email,
+                password
+            }
+            console.log(data);
+            const response=await fetch(Registration,{
+                method:"POST",
+                body:data
+            });
+            const result = await response.data;
+            setLoading(false);
+        }
+    }
+
     return (
         <div className={styles.Index}>
             <div className={styles.signupSection}>
@@ -11,7 +50,7 @@ const Index = () => {
                     Create New Account
                 </div>
                 <div className={styles.noAccount}>
-                    Already have an account? &nbsp; Log In
+                    Already have an account? &nbsp; <Link href={"/login"} >Log In</Link>
                 </div>
                 <div className={styles.nameArea}>
                     <div className={styles.firstNameBox}>

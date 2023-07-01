@@ -5,6 +5,13 @@
   font-weight: 400;
 }
 
+@font-face {
+  font-family: "Inter";
+  src: url("/static/fonts/Inter/Inter-Bold.ttf");
+  font-style: normal;
+  font-weight: 700;
+}
+
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
