@@ -1,14 +1,68 @@
-.header{
-    background-color: #14018A;
+.header {
+    background-color: #1E1F21;
     width: 100%;
     height: 67px;
     display: flex;
     align-items: center;
     padding: 23px;
+    justify-content: space-between;
+    border: 1px solid #595959;
 }
 
-.logo{
+.logo {
     position: relative;
-    width: 297px;
+    width: 55px;
     height: 55px;
+    cursor: pointer;
+}
+
+.projectName {
+    color: #FFF;
+    font-size: 24px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.allAccounts {
+    display: flex;
+    gap: 70px;
+    justify-content: center;
+    align-items: center;
+}
+
+.noOfOnlines {
+    border-radius: 18px;
+    background: #0BFA23;
+    padding: 7px 20px;
+
+    color: #FFF;
+    font-size: 18px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+    cursor: pointer;
+}
+
+.account {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #FF0A0A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.accountLetter {
+    color: #FFF;
+    font-size: 28px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
 }
