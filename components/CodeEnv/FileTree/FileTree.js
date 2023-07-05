@@ -1,4 +1,5 @@
 import styles from "/components/CodeEnv/FileTree/FileTree.module.css";
+import Image from "next/image";
 
 const FileTree = ({ filetree }) => {
     // console.log(filetree)

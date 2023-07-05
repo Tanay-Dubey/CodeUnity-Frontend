@@ -6,7 +6,7 @@
     align-items: center;
     padding: 23px;
     justify-content: space-between;
-    border: 1px solid #595959;
+    border-bottom: 1px solid #595959;
 }
 
 .logo {

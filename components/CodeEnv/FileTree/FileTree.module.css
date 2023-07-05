@@ -1,3 +1,9 @@
 .FileTree{
     padding-left:20px;
 }
+
+.folder{
+    position: relative;
+    width:10px;
+    height: 10px;
+}
