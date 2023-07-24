@@ -53,6 +53,10 @@
     color: #FFFFFF;
 }
 
+.logLink{
+    text-decoration: underline;
+}
+
 .nameArea{
     display: flex;
     justify-content: space-between;

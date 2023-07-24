@@ -20,6 +20,7 @@ const Index = () => {
     const [error, setError] = useState("");
 
     const [cookies, setCookie, removeCookie] = useCookies([
+        "userId",
         "firstname",
         "lastname"
     ])
@@ -49,6 +50,21 @@ const Index = () => {
             });
             const data = await response.json();
             if (data.result == true) {
+                setCookie("userId",data.user._id,{
+                    path:"/",
+                    maxAge: 2 * 60 * 1000,
+                    sameSite: true,
+                })
+                setCookie("firstname",data.user.firstname,{
+                    path:"/",
+                    maxAge: 2 * 60 * 1000,
+                    sameSite: true,
+                })
+                setCookie("lastname",data.user.lastname,{
+                    path:"/",
+                    maxAge: 2 * 60 * 1000,
+                    sameSite: true,
+                })
                 setSuccess("Authenticated Successfully");
             }
             else {
@@ -60,7 +76,7 @@ const Index = () => {
             router.push("/myprojects");
         }
         catch (err) {
-            setError("Unattended Error");
+            setError("Server Error: Try again later");
         }
     }
 
@@ -74,7 +90,7 @@ const Index = () => {
                     Create New Account
                 </div>
                 <div className={styles.noAccount}>
-                    Already have an account? &nbsp; <Link href={"/login"} >Log In</Link>
+                    Already have an account? &nbsp; <Link href={"/login"} className={styles.logLink}>Log In</Link>
                 </div>
                 <div className={styles.nameArea}>
                     <div className={styles.firstNameBox}>

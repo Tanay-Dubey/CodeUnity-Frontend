@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import { Alert } from "reactstrap";
+import { useCookies } from "react-cookie";
 
 const Index = () => {
     const router = useRouter();
@@ -15,6 +16,12 @@ const Index = () => {
     const [warning, setWarning] = useState("");
     const [success, setSuccess] = useState("");
     const [error, setError] = useState("");
+
+    const [cookies, setCookie, removeCookie] = useCookies([
+        "userId",
+        "firstName",
+        "lastName"
+      ]);
 
     const handleSubmit = async () => {
         if (!email || !password) {
@@ -38,6 +45,21 @@ const Index = () => {
             });
             const data = await response.json();
             if (data.result == true) {
+                setCookie("userId",data.user._id,{
+                    path:"/",
+                    maxAge: 2 * 60 * 1000,
+                    sameSite: true,
+                })
+                setCookie("firstname",data.user.firstname,{
+                    path:"/",
+                    maxAge: 2 * 60 * 1000,
+                    sameSite: true,
+                })
+                setCookie("lastname",data.user.lastname,{
+                    path:"/",
+                    maxAge: 2 * 60 * 1000,
+                    sameSite: true,
+                })
                 setSuccess("Authenticated Successfully");
             }
             else {
@@ -49,7 +71,7 @@ const Index = () => {
             router.push("/myprojects");
         }
         catch (err) {
-            setError("Unattended Error");
+            setError("Server Error: Try again later");
         }
     }
 
@@ -64,7 +86,7 @@ const Index = () => {
                     Log In To Your Account.
                 </div>
                 <div className={styles.noAccount}>
-                    Don't have an account? &nbsp; <Link href={"/register"} >Sign Up</Link>
+                    Don't have an account? &nbsp; <Link href={"/register"} className={styles.signLink}>Sign Up</Link>
                 </div>
                 <div className={styles.emailBox}>
                     <div className={styles.emailText}>Email:</div>
