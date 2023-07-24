@@ -12,6 +12,7 @@
 }
 
 .activeFile{
+    font-family: var(--font-main);
     margin-left:40px;
 }
 

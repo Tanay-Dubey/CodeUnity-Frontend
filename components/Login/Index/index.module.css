@@ -3,6 +3,7 @@
     background-image: url("/static/login/loginImg.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
     /* filter: blur(8px);
     -webkit-filter: blur(8px); */
     display: flex;
@@ -92,6 +93,9 @@
 }
 
 .passwordBox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     margin-top: 30px;
     width: 100%;
     height: 64px;
@@ -99,6 +103,13 @@
     border: 3px solid #FFFFFF;
     border-radius: 20px;
     padding: 6px 20px;
+}
+
+.passwordSection{
+    width: calc(100% - 40px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .passwordText {
@@ -128,6 +139,13 @@
     outline: none;
 }
 
+.viewPassImg{
+    position: relative;
+    width:30px;
+    height: 28px;
+    cursor: pointer;
+}
+
 .submitBtn {
     margin-top: 100px;
     width: 100%;
@@ -144,6 +162,18 @@
 
     color: #FFFFFF;
     cursor: pointer;
+}
+
+.alertSection{
+    position: absolute;
+    z-index: 5;
+    bottom:30px;
+    width:100%;
+}
+
+.alertBar{
+    width:fit-content;
+    margin:auto;
 }
 
 @media only screen and (max-width:2560px)

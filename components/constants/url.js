@@ -1,6 +1,8 @@
 const domain="http://localhost:8000";
-const Registration=`${domain}/register`;
+const registerUser=`${domain}/auth/register`;
+const loginUser=`${domain}/auth/login`;
 
 export{
-    Registration
+    registerUser,
+    loginUser
 };

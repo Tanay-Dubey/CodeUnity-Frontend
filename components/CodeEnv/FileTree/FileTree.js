@@ -1,22 +1,30 @@
 import styles from "/components/CodeEnv/FileTree/FileTree.module.css";
 import Image from "next/image";
+import { useState } from "react";
+
+const TreeElement = ({element}) => {
+    const [openTree, setOpenTree] = useState(false);
+    return (
+        <div>
+            <div key={element.id} className={styles.fileTab} onClick={() => { setOpenTree(!openTree) }}><div className={styles.folderIcon}><Image src={"/static/codeenv/folder.png"} fill={true} /></div> {element.name}</div>
+            {
+                openTree && <FileTree filetree={element.children} />
+            }
+        </div>
+    )
+}
 
 const FileTree = ({ filetree }) => {
-    // console.log(filetree)
 
     return (
         <div className={styles.FileTree}>
             {
                 filetree.map(element => {
                     if (element.type == "folder") {
-                        return <div>
-                            <div key={element.id}>📂 {element.name}</div>
-                            <FileTree filetree={element.children} />
-                        </div>
+                        return <TreeElement element={element}/>
                     }
-                    else if(element.type=="file")
-                    {
-                        return <div>🖹 {element.name}</div>
+                    else if (element.type == "file") {
+                        return <div className={styles.fileTab}><div className={styles.fileIcon}><Image src={"/static/codeenv/file.png"} fill={true} /></div> {element.name}</div>
                     }
                 })
             }
